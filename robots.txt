@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Search Engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# AI Crawlers
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+Sitemap: https://urologo.damianmontes.medico.ec/sitemap.xml
