@@ -88,9 +88,44 @@ export default function Home() {
     <div className="app-wrapper font-body" id="appWrapper" ref={appWrapperRef} onMouseMove={handleMouseMove}>
       <Helmet>
         <title>Dr. Damián Montes | Urólogo Especialista en Manta, Ecuador</title>
-        <meta name="description" content="Dr. Damián Montes es un cirujano urólogo de confianza en Manta, Ecuador. Ofrecemos atención especializada en urología, cirugía mínimamente invasiva y más. Conoce más en urologo.damianmontes.medico.ec" />
+        <meta name="description" content="Dr. Damián Montes es un cirujano urólogo de confianza en Manta, Ecuador." />
         <meta name="keywords" content="urologo manta, cirujano urologo, damian montes, urologia ecuador, calculos renales, prostata, urologia, urologo en manta" />
-        <link rel="canonical" href="https://urologo.damianmontes.medico.ec" />
+        <link rel="canonical" href="https://urologo.damianmontes.medico.ec/" />
+        
+        {/* Open Graph / Social Media Meta Tags */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://urologo.damianmontes.medico.ec/" />
+        <meta property="og:title" content="Dr. Damián Montes | Urólogo Especialista en Manta" />
+        <meta property="og:description" content="Cirujano urólogo de confianza en Manta, Ecuador. Atención especializada en urología, próstata, cálculos renales y cirugía mínimamente invasiva." />
+        <meta property="og:image" content="https://i.ibb.co/MyvThyG3/LOGOTIPO-Dami-n-Montes-WEBB.png" />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://urologo.damianmontes.medico.ec/" />
+        <meta property="twitter:title" content="Dr. Damián Montes | Urólogo Especialista en Manta" />
+        <meta property="twitter:description" content="Cirujano urólogo de confianza en Manta, Ecuador. Atención especializada en urología, próstata, cálculos renales y cirugía mínimamente invasiva." />
+        <meta property="twitter:image" content="https://i.ibb.co/MyvThyG3/LOGOTIPO-Dami-n-Montes-WEBB.png" />
+
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "Physician",
+              "name": "Dr. Damián Montes",
+              "image": "https://i.ibb.co/hFRHzGN6/damian000000.png",
+              "url": "https://urologo.damianmontes.medico.ec",
+              "telephone": "+593986495487",
+              "medicalSpecialty": "Urology",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Calle 18 y Avenida 38 y 39, Clínica del Sol (Torre Nueva), Piso 1 - Consultorio 211",
+                "addressLocality": "Manta",
+                "addressRegion": "Manabí",
+                "addressCountry": "EC"
+              },
+              "description": "Cirujano Urólogo en Manta, Ecuador. Especialista en próstata, cálculos renales, y cirugía mínimamente invasiva."
+            }
+          `}
+        </script>
       </Helmet>
       {/* Navigation */}
       <nav
@@ -101,13 +136,14 @@ export default function Home() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
-            <div className="flex items-center cursor-pointer" onClick={(e) => scrollToSection(e, 'inicio')}>
+            <a href="/" className="flex items-center cursor-pointer" onClick={(e) => scrollToSection(e, 'inicio')}>
               <img
                 src="https://i.ibb.co/MyvThyG3/LOGOTIPO-Dami-n-Montes-WEBB.png"
                 alt="Logo Dr. Damián Montes"
                 className="h-14 w-auto"
+                referrerPolicy="no-referrer"
               />
-            </div>
+            </a>
 
             {/* Desktop Nav */}
             <div className="hidden md:flex items-center gap-1">
@@ -204,9 +240,10 @@ export default function Home() {
             <div className="hidden lg:flex items-center justify-center">
               <img
                 src="https://i.ibb.co/hFRHzGN6/damian000000.png"
-                alt="Dr. Damián Montes"
+                alt="Dr. Damián Montes - Cirujano Urólogo Especialista en Manta"
                 className="w-full max-w-2xl h-auto object-contain rounded-3xl"
                 style={{ animation: 'imageFloat 6s ease-in-out infinite, imageGlow 6s ease-in-out infinite' }}
+                referrerPolicy="no-referrer"
               />
             </div>
           </div>
@@ -218,6 +255,26 @@ export default function Home() {
           </svg>
         </div>
       </header>
+ 
+      {/* Litotricia Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="font-display text-3xl sm:text-4xl font-bold mb-6 text-[#2C1810]">Litotricia con Láser Holmio</h2>
+              <p className="text-lg text-[#6D4C41] mb-6">
+                Somos los líderes en Manta en tratamientos mínimamente invasivos para cálculos renales.
+              </p>
+              <p className="text-lg text-[#6D4C41] mb-6">
+                Utilizamos tecnología de Láser Holmio de última generación para una fragmentación de alta precisión, permitiendo una recuperación rápida y sin incisiones externas.
+              </p>
+            </div>
+            <div className="rounded-3xl overflow-hidden shadow-2xl">
+              <img src="https://i.ibb.co/ZzCcL4SD/damians17.jpg" alt="Litotricia con Láser Holmio" className="w-full h-auto" referrerPolicy="no-referrer" />
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Services Section */}
       <section id="servicios" className="py-20 lg:py-28 bg-[#F5F1E8]">
@@ -231,11 +288,11 @@ export default function Home() {
           
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
             {services.map((service, i) => (
-              <Link key={service.id} to={`/service/${service.id}`} className={`service-card rounded-3xl overflow-hidden anim-fade-up anim-delay-${(i % 4) + 1} bg-white border border-[#E8DCC8] block group shadow-sm hover:shadow-2xl transition-all duration-500`}>
+              <Link key={service.id} to={`/${service.id}`} className={`service-card rounded-3xl overflow-hidden anim-fade-up anim-delay-${(i % 4) + 1} bg-white border border-[#E8DCC8] block group shadow-sm hover:shadow-2xl transition-all duration-500`}>
                 <div className="w-full relative aspect-[4/3] overflow-hidden bg-[#F5F1E8]">
                   {service.img ? (
                     <>
-                      <img src={service.img} alt={service.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                      <img src={service.img} alt={service.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerPolicy="no-referrer" />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#2C1810]/80 via-[#2C1810]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     </>
                   ) : (
@@ -369,6 +426,16 @@ export default function Home() {
               ))}
             </div>
           </div>
+          <div className="mt-12 text-center">
+            <a 
+              href="https://g.page/r/Cf1-Cj5cSR-yEBM/review" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="inline-flex items-center gap-2 font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:shadow-xl hover:scale-105 bg-[#5D4037] text-[#F5F1E8]"
+            >
+              Déjanos tu reseña
+            </a>
+          </div>
         </div>
       </section>
 
@@ -430,7 +497,7 @@ export default function Home() {
 
       {/* Contact Image */}
       <div className="w-full h-auto bg-white mt-[60px]">
-        <img src="https://i.ibb.co/xSJ4yMZm/Whisk-ihjmxgznxewyxmgmtazy3gtl2i2m00sokjdmtez.jpg" alt="Consultorio urológico" className="w-full h-auto object-cover" />
+        <img src="https://i.ibb.co/xSJ4yMZm/Whisk-ihjmxgznxewyxmgmtazy3gtl2i2m00sokjdmtez.jpg" alt="Consultorio urológico" className="w-full h-auto object-cover" referrerPolicy="no-referrer" />
       </div>
 
       {/* Contact Section */}
@@ -530,6 +597,20 @@ export default function Home() {
               </form>
             </div>
           </div>
+          
+          {/* Map */}
+          <div className="mt-16 rounded-3xl overflow-hidden border border-[#E8DCC8] shadow-xl">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1994.4607758362678!2d-80.73977538466159!3d-0.9573887993356064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902be17e132c3f8f%3A0x6d9f7833a6f1d0a5!2sCl%C3%ADnica%20del%20Sol!5e0!3m2!1ses-419!2sec!4v1713856385000!5m2!1ses-419!2sec" 
+              width="100%" 
+              height="450" 
+              style={{border:0}} 
+              allowFullScreen={true} 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Ubicación del consultorio del Dr. Damián Montes en Manta"
+            ></iframe>
+          </div>
         </div>
       </section>
 
@@ -537,9 +618,9 @@ export default function Home() {
       <footer className="py-12 bg-[#3E2723]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="flex items-center gap-3">
-              <img src="https://i.ibb.co/RpsZthjJ/LOGOTIPO-Dami-n-Montes-BYN-FINAL.png" alt="Logo Dr. Damián Montes" className="h-12 w-auto" />
-            </div>
+            <a href="/" className="flex items-center gap-3" onClick={(e) => scrollToSection(e, 'inicio')}>
+              <img src="https://i.ibb.co/RpsZthjJ/LOGOTIPO-Dami-n-Montes-BYN-FINAL.png" alt="Logo Dr. Damián Montes" className="h-12 w-auto" referrerPolicy="no-referrer" />
+            </a>
             <p className="text-sm text-[#D7CCC8]">
               © Todos los derechos reservados, Dr. Damián Montes 2026. Diseñada por <a href="https://mantaconect.com/" target="_blank" rel="noopener noreferrer" className="text-[#F5F1E8] underline transition-opacity hover:opacity-80">Manta Connect</a>.
             </p>

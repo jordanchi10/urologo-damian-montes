@@ -25,7 +25,7 @@ export default function BlogPost() {
           <ArrowLeft className="w-5 h-5" /> Volver al Blog
         </Link>
         <article className="bg-white rounded-2xl p-8 shadow-sm border border-[#E8DCC8]">
-          <img src={article.image} alt={article.title} className="w-full h-64 md:h-96 object-cover rounded-xl mb-8" />
+          <img src={article.image} alt={article.title} className="w-full h-64 md:h-96 object-cover rounded-xl mb-8" referrerPolicy="no-referrer" />
           <h1 className="font-display text-4xl sm:text-5xl font-bold mb-4 text-[#2C1810]">{article.title}</h1>
           <div className="flex items-center gap-2 mb-8 text-sm text-[#9A8178]">
             <span className="bg-[#FFF9E6] text-[#8B6F00] px-3 py-1 rounded-full uppercase tracking-widest text-xs font-semibold">{article.category}</span>
@@ -38,6 +38,28 @@ export default function BlogPost() {
             </a>
           </div>
         </article>
+
+        {/* Related Articles for SEO Internal Linking */}
+        <div className="mt-16 mb-8">
+          <h3 className="font-display text-2xl font-bold mb-6 text-[#2C1810]">Más artículos de interés</h3>
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {blogArticles
+              .filter(a => a.id !== article.id)
+              .sort(() => 0.5 - Math.random())
+              .slice(0, 3)
+              .map(related => (
+                <Link key={related.id} to={`/blog/${related.id}`} className="bg-white rounded-xl overflow-hidden border border-[#E8DCC8] hover:shadow-lg transition-all duration-300 group">
+                  <div className="aspect-video overflow-hidden">
+                    <img src={related.image} alt={related.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerPolicy="no-referrer" />
+                  </div>
+                  <div className="p-4">
+                    <span className="text-xs font-semibold text-[#8B6F00] uppercase tracking-wider mb-2 block">{related.category}</span>
+                    <h4 className="font-display font-bold text-[#2C1810] leading-tight group-hover:text-[#0B7B5A] transition-colors">{related.title}</h4>
+                  </div>
+                </Link>
+              ))}
+          </div>
+        </div>
       </div>
     </div>
   );

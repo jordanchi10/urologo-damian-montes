@@ -13,7 +13,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:id" element={<BlogPost />} />
-        <Route path="/service/:id" element={<ServiceDetail />} />
+        <Route path="/:id" element={<ServiceDetail />} />
       </Routes>
       <Chatbot />
     </BrowserRouter>

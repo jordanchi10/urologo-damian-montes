@@ -1,29 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { MessageCircle, X, Send, Bot, Phone } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { GoogleGenAI } from '@google/genai';
 import { services } from '../data/servicesData';
 import { faqs } from '../data/chatbotKnowledge';
 import { blogArticles } from '../data/blogData';
-
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || '' });
-
-const stripHtml = (html: string) => html.replace(/<[^>]*>/g, '');
-
-const knowledgeBase = `
-Información del Dr. Damián Montes:
-- Urólogo en Manta, Ecuador.
-- Especialista en diagnóstico y tratamiento de enfermedades del sistema urinario y reproductor masculino.
-
-Servicios ofrecidos:
-${services.map(s => `- ${s.title}: ${s.longDesc}`).join('\n')}
-
-Preguntas frecuentes:
-${faqs.map(f => `- ${f.question}: ${f.answer}`).join('\n')}
-
-Artículos del blog:
-${blogArticles.map(b => `- ${b.title}: ${stripHtml(b.content)}`).join('\n')}
-`;
 
 export default function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,6 +18,50 @@ export default function Chatbot() {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
+  const jaccardSimilarity = (s1: string, s2: string) => {
+    const set1 = new Set(s1.toLowerCase().split(/\s+/));
+    const set2 = new Set(s2.toLowerCase().split(/\s+/));
+    const intersection = new Set([...set1].filter(x => set2.has(x)));
+    const union = new Set([...set1, ...set2]);
+    return intersection.size / union.size;
+  };
+
+  const findAnswer = (input: string) => {
+    let bestMatch = { answer: "", score: 0 };
+    const threshold = 0.1; // Lower threshold to allow better matching
+
+    // 1. Check FAQs
+    faqs.forEach(faq => {
+      const score = jaccardSimilarity(input, faq.question);
+      if (score > bestMatch.score) {
+        bestMatch = { answer: faq.answer, score };
+      }
+    });
+
+    // 2. Check Services
+    services.forEach(service => {
+      const score = jaccardSimilarity(input, service.title + " " + service.desc);
+      if (score > bestMatch.score) {
+        bestMatch = { answer: service.longDesc, score };
+      }
+    });
+
+    // 3. Check Blog
+    blogArticles.forEach(article => {
+      const score = jaccardSimilarity(input, article.title + " " + article.excerpt);
+      if (score > bestMatch.score) {
+        bestMatch = { answer: article.excerpt + " (Puedes leer más en nuestro blog)", score };
+      }
+    });
+    
+    if (bestMatch.score >= threshold) {
+      return bestMatch.answer;
+    }
+
+    // Default response if no good match
+    return "Como asistente del Dr. Damián Montes, estoy aquí para ayudarte. Mi especialidad es la urología. ¿Te gustaría saber más sobre nuestros servicios, tienes alguna duda médica o prefieres agendar una cita por WhatsApp? https://wa.me/593986495487";
+  };
+
   const handleSend = async () => {
     if (!input.trim()) return;
 
@@ -46,26 +70,15 @@ export default function Chatbot() {
     setInput('');
     setIsLoading(true);
 
-    try {
-      const response = await ai.models.generateContent({
-        model: 'gemini-3-flash-preview',
-        contents: `Eres un asistente virtual cálido, amable y profesional para el consultorio del Dr. Damián Montes, un urólogo en Manta, Ecuador. Tu objetivo es ayudar a los pacientes con empatía y claridad. Utiliza emojis de manera moderada para hacer tus respuestas más amigables y fáciles de leer. Responde de manera concisa basándote EXCLUSIVAMENTE en la siguiente base de conocimiento. Si la información no está en la base, indica con amabilidad que el paciente debe contactar directamente al consultorio a través de este enlace de WhatsApp: https://wa.me/593986495487 para obtener asistencia personalizada.
+    // Simulate delay for natural typing feel
+    await new Promise(resolve => setTimeout(resolve, 600));
 
-Base de conocimiento:
-${knowledgeBase}
-        
-Pregunta del usuario: ${input}`,
-      });
-      
-      const botMessage = { role: 'bot' as const, text: response.text || 'Lo siento, no pude procesar tu solicitud.' };
-      setMessages((prev) => [...prev, botMessage]);
-    } catch (error) {
-      console.error('Chatbot error:', error);
-      setMessages((prev) => [...prev, { role: 'bot', text: 'Hubo un error al procesar tu mensaje. Por favor intenta de nuevo.' }]);
-    } finally {
-      setIsLoading(false);
-    }
+    const answer = findAnswer(input);
+
+    setMessages((prev) => [...prev, { role: 'bot', text: answer }]);
+    setIsLoading(false);
   };
+
 
   const renderMessage = (text: string) => {
     const whatsappUrl = "https://wa.me/593986495487";
