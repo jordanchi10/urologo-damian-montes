@@ -43,6 +43,32 @@ export default function ServiceDetail() {
             </div>
           )}
 
+          {service.id === 'litotricia-laser-holmio' && (
+            <div className="w-full mb-8">
+              <video 
+                controls 
+                playsInline
+                className="w-full rounded-xl shadow-lg"
+              >
+                <source src="https://urologo.damianmontes.medico.ec/media/cirugia_ureter_manta.mp4" type="video/mp4" />
+                Tu navegador no soporta el formato de video.
+              </video>
+            </div>
+          )}
+
+          {service.id === 'calculos-vias-urinarias' && (
+            <div className="w-full mb-8">
+              <video 
+                controls 
+                playsInline
+                className="w-full rounded-xl shadow-lg"
+              >
+                <source src="https://urologo.damianmontes.medico.ec/media/cirugia_rinon_manta1.mp4" type="video/mp4" />
+                Tu navegador no soporta el formato de video.
+              </video>
+            </div>
+          )}
+
           <div className="text-lg text-[#6D4C41] mb-8 space-y-4">
             {service.longDesc.split('\n').map((line, i) => {
               if (line === 'Causas:' || line === 'Tratamiento:') {
