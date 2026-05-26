@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Menu, Calendar, Droplets, HeartPulse, ShieldAlert, CheckCircle, Instagram, Music, Facebook, Star, User, Award, Microscope, HeartHandshake, MapPin, Phone, Clock, MessageCircle, ImageIcon, Home as HomeIcon, BriefcaseMedical, BookOpen, ArrowRight } from 'lucide-react';
+import { Menu, X, Calendar, Droplets, HeartPulse, ShieldAlert, CheckCircle, Instagram, Music, Facebook, Star, User, Award, Microscope, HeartHandshake, MapPin, Phone, Clock, MessageCircle, ImageIcon, Home as HomeIcon, BriefcaseMedical, BookOpen, ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
@@ -156,10 +156,14 @@ export default function Home() {
 
             {/* Mobile menu button */}
             <button
-              className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-all"
+              className="md:hidden p-2.5 rounded-full bg-[#F5F1E8] border border-[#E8DCC8] hover:bg-[#E8DCC8] transition-all flex items-center justify-center shadow-sm"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
-              <Menu className="w-6 h-6 text-[#2C1810]" />
+              {mobileMenuOpen ? (
+                <X className="w-6 h-6 text-[#2C1810]" />
+              ) : (
+                <Menu className="w-6 h-6 text-[#2C1810]" />
+              )}
             </button>
           </div>
         </div>
@@ -270,7 +274,14 @@ export default function Home() {
               </p>
             </div>
             <div className="rounded-3xl overflow-hidden shadow-2xl">
-              <img src="https://i.ibb.co/ZzCcL4SD/damians17.jpg" alt="Litotricia con Láser Holmio" className="w-full h-auto" referrerPolicy="no-referrer" />
+              <video 
+                controls 
+                playsInline
+                className="w-full h-auto"
+              >
+                <source src="https://urologo.damianmontes.medico.ec/media/cirugia_rinon_manta1.mp4" type="video/mp4" />
+                Tu navegador no soporta el formato de video.
+              </video>
             </div>
           </div>
         </div>
@@ -615,14 +626,58 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 bg-[#3E2723]">
+      <footer className="py-16 bg-[#2C1810]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <a href="/" className="flex items-center gap-3" onClick={(e) => scrollToSection(e, 'inicio')}>
-              <img src="https://i.ibb.co/RpsZthjJ/LOGOTIPO-Dami-n-Montes-BYN-FINAL.png" alt="Logo Dr. Damián Montes" className="h-12 w-auto" referrerPolicy="no-referrer" />
-            </a>
-            <p className="text-sm text-[#D7CCC8]">
-              © Todos los derechos reservados, Dr. Damián Montes 2026. Diseñada por <a href="https://mantaconect.com/" target="_blank" rel="noopener noreferrer" className="text-[#F5F1E8] underline transition-opacity hover:opacity-80">Manta Connect</a>.
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+            <div>
+              <a href="/" className="inline-block mb-6" onClick={(e) => scrollToSection(e, 'inicio')}>
+                <img src="https://i.ibb.co/RpsZthjJ/LOGOTIPO-Dami-n-Montes-BYN-FINAL.png" alt="Logo Dr. Damián Montes" className="h-16 w-auto" referrerPolicy="no-referrer" />
+              </a>
+              <p className="text-[#D7CCC8] text-sm leading-relaxed max-w-xs">
+                Especialista en urología comprometido con la excelencia médica y la atención humanizada en la ciudad de Manta.
+              </p>
+            </div>
+            <div>
+              <h4 className="text-white font-display text-lg font-bold mb-6">Enlaces Rápidos</h4>
+              <ul className="space-y-3">
+                {['Inicio', 'Servicios', 'Especialidades', 'Blog'].map((link) => (
+                  <li key={link}>
+                    <a href={`#${link.toLowerCase()}`} className="text-[#D7CCC8] hover:text-white transition-colors" onClick={(e) => scrollToSection(e, link.toLowerCase())}>
+                      {link}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-white font-display text-lg font-bold mb-6">Contacto</h4>
+              <ul className="space-y-3 text-[#D7CCC8] text-sm">
+                <li className="flex items-start gap-2">
+                  <MapPin className="w-5 h-5 flex-shrink-0 text-[#0B7B5A]" />
+                  <span>Clínica del Sol, Manta, Ecuador</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <Phone className="w-5 h-5 flex-shrink-0 text-[#0B7B5A]" />
+                  <a href="tel:+593986495487" className="hover:text-white transition-colors">+593 98 649 5487</a>
+                </li>
+              </ul>
+              <div className="flex gap-4 mt-6">
+                {[
+                  { Icon: Instagram, url: "https://www.instagram.com/urologo.damianmontes/" },
+                  { Icon: Facebook, url: "https://www.facebook.com/urologo.damianmontes" },
+                  { Icon: Music, url: "https://tiktok.com/@urologo.damianmontes/" }
+                ].map(({ Icon, url }, i) => (
+                    <a key={i} href={url} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-[#3E2723] flex items-center justify-center text-[#D7CCC8] hover:bg-[#0B7B5A] hover:text-white transition-all">
+                      <Icon className="w-5 h-5" />
+                    </a>
+                ))}
+              </div>
+            </div>
+          </div>
+          
+          <div className="pt-8 border-t border-[#3E2723] text-center">
+            <p className="text-sm text-[#9A8178]">
+              © {new Date().getFullYear()} Dr. Damián Montes. Todos los derechos reservados. | Diseñado por <a href="https://mantaconect.com/" target="_blank" rel="noopener noreferrer" className="text-[#F5F1E8] underline transition-opacity hover:opacity-80">Manta Connect</a>.
             </p>
           </div>
         </div>

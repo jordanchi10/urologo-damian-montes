@@ -74,7 +74,7 @@ export default function Blog() {
                   </div>
                   <h3 className="font-display text-lg font-bold mb-3 leading-tight text-[#2C1810]">{article.title}</h3>
                   <p className="text-sm leading-relaxed mb-4 text-[#6D4C41]">{article.excerpt}</p>
-                  <Link to={`/blog/${article.id}`} className="inline-flex items-center gap-2 font-semibold text-sm transition-all duration-300 hover:gap-3 text-[#0B7B5A]">
+                  <Link to={`/blog/${article.slug}`} className="inline-flex items-center gap-2 font-semibold text-sm transition-all duration-300 hover:gap-3 text-[#0B7B5A]">
                     Leer más <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
@@ -84,31 +84,33 @@ export default function Blog() {
           
           {/* Pagination Controls */}
           <div className="flex justify-center items-center gap-4 mt-16">
-            {currentPage > 1 ? (
-              <Link
-                to={`/blog?page=${currentPage - 1}`}
-                className="px-6 py-2 rounded-full bg-[#5D4037] text-white font-semibold transition-all hover:bg-[#4E342E]"
-              >
-                Anterior
-              </Link>
-            ) : (
-              <span className="px-6 py-2 rounded-full bg-[#5D4037] text-white font-semibold opacity-50 cursor-not-allowed">
-                Anterior
-              </span>
-            )}
-            <span className="text-[#6D4C41] font-medium">Página {currentPage} de {totalPages}</span>
-            {currentPage < totalPages ? (
-              <Link
-                to={`/blog?page=${currentPage + 1}`}
-                className="px-6 py-2 rounded-full bg-[#5D4037] text-white font-semibold transition-all hover:bg-[#4E342E]"
-              >
-                Siguiente
-              </Link>
-            ) : (
-              <span className="px-6 py-2 rounded-full bg-[#5D4037] text-white font-semibold opacity-50 cursor-not-allowed">
-                Siguiente
-              </span>
-            )}
+            <Link
+              to={currentPage > 1 ? `/blog?page=${currentPage - 1}` : '#'}
+              className={`flex items-center gap-2 px-6 py-2 rounded-full border transition-all ${
+                currentPage === 1 
+                  ? 'opacity-50 cursor-not-allowed border-[#E8DCC8] text-gray-400' 
+                  : 'border-[#5D4037] text-[#5D4037] hover:bg-[#5D4037] hover:text-white'
+              }`}
+              onClick={(e) => currentPage === 1 && e.preventDefault()}
+            >
+              <ArrowLeft className="w-4 h-4" /> Anterior
+            </Link>
+            
+            <span className="text-[#6D4C41] font-semibold">
+              {currentPage} <span className="text-[#9A8178]">/</span> {totalPages}
+            </span>
+
+            <Link
+              to={currentPage < totalPages ? `/blog?page=${currentPage + 1}` : '#'}
+              className={`flex items-center gap-2 px-6 py-2 rounded-full border transition-all ${
+                currentPage === totalPages 
+                  ? 'opacity-50 cursor-not-allowed border-[#E8DCC8] text-gray-400' 
+                  : 'border-[#5D4037] text-[#5D4037] hover:bg-[#5D4037] hover:text-white'
+              }`}
+              onClick={(e) => currentPage === totalPages && e.preventDefault()}
+            >
+              Siguiente <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
       </section>
