@@ -108,7 +108,7 @@ export default function ServiceDetail() {
             .map((rs) => (
               <Link
                 key={rs.id}
-                to={`/servicio/${rs.id}`}
+                to={`/${rs.id}`}
                 className="bg-white rounded-2xl overflow-hidden shadow-sm border border-[#E8DCC8] hover:shadow-lg transition-all group"
               >
                 <div className="aspect-[4/3] w-full overflow-hidden">

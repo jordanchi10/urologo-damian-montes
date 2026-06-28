@@ -2,58 +2,65 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://urologo.damianmontes.medico.ec/</loc>
-    <lastmod>2026-03-28</lastmod>
+    <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://urologo.damianmontes.medico.ec/blog</loc>
-    <lastmod>2026-03-28</lastmod>
+    <lastmod>2026-06-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://urologo.damianmontes.medico.ec/calculadora-ipss</loc>
+    <lastmod>2026-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
   <!-- Blog Posts -->
-  <url><loc>https://urologo.damianmontes.medico.ec/blog/1</loc><lastmod>2026-03-28</lastmod><priority>0.6</priority></url>
-  <url><loc>https://urologo.damianmontes.medico.ec/blog/2</loc><lastmod>2026-03-28</lastmod><priority>0.6</priority></url>
-  <url><loc>https://urologo.damianmontes.medico.ec/blog/3</loc><lastmod>2026-03-28</lastmod><priority>0.6</priority></url>
-  <url><loc>https://urologo.damianmontes.medico.ec/blog/4</loc><lastmod>2026-03-28</lastmod><priority>0.6</priority></url>
-  <url><loc>https://urologo.damianmontes.medico.ec/blog/5</loc><lastmod>2026-03-28</lastmod><priority>0.6</priority></url>
-  <url><loc>https://urologo.damianmontes.medico.ec/blog/6</loc><lastmod>2026-03-28</lastmod><priority>0.6</priority></url>
-  <url><loc>https://urologo.damianmontes.medico.ec/blog/7</loc><lastmod>2026-03-28</lastmod><priority>0.6</priority></url>
-  <url><loc>https://urologo.damianmontes.medico.ec/blog/8</loc><lastmod>2026-03-28</lastmod><priority>0.6</priority></url>
-  <url><loc>https://urologo.damianmontes.medico.ec/blog/9</loc><lastmod>2026-03-28</lastmod><priority>0.6</priority></url>
-  <url><loc>https://urologo.damianmontes.medico.ec/blog/10</loc><lastmod>2026-03-28</lastmod><priority>0.6</priority></url>
-  <url><loc>https://urologo.damianmontes.medico.ec/blog/11</loc><lastmod>2026-03-28</lastmod><priority>0.6</priority></url>
-  <url><loc>https://urologo.damianmontes.medico.ec/blog/12</loc><lastmod>2026-03-28</lastmod><priority>0.6</priority></url>
-  <url><loc>https://urologo.damianmontes.medico.ec/blog/13</loc><lastmod>2026-03-28</lastmod><priority>0.6</priority></url>
-  <url><loc>https://urologo.damianmontes.medico.ec/blog/14</loc><lastmod>2026-03-28</lastmod><priority>0.6</priority></url>
-  <url><loc>https://urologo.damianmontes.medico.ec/blog/15</loc><lastmod>2026-03-28</lastmod><priority>0.6</priority></url>
-  <url><loc>https://urologo.damianmontes.medico.ec/blog/16</loc><lastmod>2026-03-28</lastmod><priority>0.6</priority></url>
-  <url><loc>https://urologo.damianmontes.medico.ec/blog/17</loc><lastmod>2026-03-28</lastmod><priority>0.6</priority></url>
-  <url><loc>https://urologo.damianmontes.medico.ec/blog/18</loc><lastmod>2026-03-28</lastmod><priority>0.6</priority></url>
-  <url><loc>https://urologo.damianmontes.medico.ec/blog/19</loc><lastmod>2026-03-28</lastmod><priority>0.6</priority></url>
-  <url><loc>https://urologo.damianmontes.medico.ec/blog/20</loc><lastmod>2026-03-28</lastmod><priority>0.6</priority></url>
-  <url><loc>https://urologo.damianmontes.medico.ec/blog/21</loc><lastmod>2026-03-28</lastmod><priority>0.6</priority></url>
-  <url><loc>https://urologo.damianmontes.medico.ec/blog/22</loc><lastmod>2026-03-28</lastmod><priority>0.6</priority></url>
-  <url><loc>https://urologo.damianmontes.medico.ec/blog/23</loc><lastmod>2026-03-28</lastmod><priority>0.6</priority></url>
-  <url><loc>https://urologo.damianmontes.medico.ec/blog/24</loc><lastmod>2026-03-28</lastmod><priority>0.6</priority></url>
-  <url><loc>https://urologo.damianmontes.medico.ec/blog/25</loc><lastmod>2026-03-28</lastmod><priority>0.6</priority></url>
+  <url><loc>https://urologo.damianmontes.medico.ec/blog/prevencion-del-cancer-de-prostata-guia-completa</loc><lastmod>2026-06-24</lastmod><priority>0.6</priority></url>
+  <url><loc>https://urologo.damianmontes.medico.ec/blog/calculos-renales-sintomas-y-tratamiento</loc><lastmod>2026-06-24</lastmod><priority>0.6</priority></url>
+  <url><loc>https://urologo.damianmontes.medico.ec/blog/incontinencia-urinaria-en-adultos</loc><lastmod>2026-06-24</lastmod><priority>0.6</priority></url>
+  <url><loc>https://urologo.damianmontes.medico.ec/blog/disfuncion-erectil-soluciones-modernas</loc><lastmod>2026-06-24</lastmod><priority>0.6</priority></url>
+  <url><loc>https://urologo.damianmontes.medico.ec/blog/infecciones-de-vias-urinarias</loc><lastmod>2026-06-24</lastmod><priority>0.6</priority></url>
+  <url><loc>https://urologo.damianmontes.medico.ec/blog/eyaculacion-precoz-tratamientos-efectivos</loc><lastmod>2026-06-24</lastmod><priority>0.6</priority></url>
+  <url><loc>https://urologo.damianmontes.medico.ec/blog/prostata-inflamada-bph</loc><lastmod>2026-06-24</lastmod><priority>0.6</priority></url>
+  <url><loc>https://urologo.damianmontes.medico.ec/blog/varicocele-y-fecundidad</loc><lastmod>2026-06-24</lastmod><priority>0.6</priority></url>
+  <url><loc>https://urologo.damianmontes.medico.ec/blog/cirugia-laser-holmio-ventajas</loc><lastmod>2026-06-24</lastmod><priority>0.6</priority></url>
+  <url><loc>https://urologo.damianmontes.medico.ec/blog/fimosis-opciones-de-tratamiento</loc><lastmod>2026-06-24</lastmod><priority>0.6</priority></url>
+  <url><loc>https://urologo.damianmontes.medico.ec/blog/enfermedades-de-transmision-sexual</loc><lastmod>2026-06-24</lastmod><priority>0.6</priority></url>
+  <url><loc>https://urologo.damianmontes.medico.ec/blog/litotricia-fragmentacion-de-calculos</loc><lastmod>2026-06-24</lastmod><priority>0.6</priority></url>
+  <url><loc>https://urologo.damianmontes.medico.ec/blog/quistes-de-epididimo</loc><lastmod>2026-06-24</lastmod><priority>0.6</priority></url>
+  <url><loc>https://urologo.damianmontes.medico.ec/blog/vasectomia-todo-lo-que-debes-saber</loc><lastmod>2026-06-24</lastmod><priority>0.6</priority></url>
+  <url><loc>https://urologo.damianmontes.medico.ec/blog/terapia-de-testosterona</loc><lastmod>2026-06-24</lastmod><priority>0.6</priority></url>
+  <url><loc>https://urologo.damianmontes.medico.ec/blog/ureteroscopia-flexible</loc><lastmod>2026-06-24</lastmod><priority>0.6</priority></url>
+  <url><loc>https://urologo.damianmontes.medico.ec/blog/estilo-de-vida-y-salud-urinaria</loc><lastmod>2026-06-24</lastmod><priority>0.6</priority></url>
+  <url><loc>https://urologo.damianmontes.medico.ec/blog/diagnostico-por-imagen-en-urologia</loc><lastmod>2026-06-24</lastmod><priority>0.6</priority></url>
+  <url><loc>https://urologo.damianmontes.medico.ec/blog/prostatitis-inflamacion-de-la-prostata</loc><lastmod>2026-06-24</lastmod><priority>0.6</priority></url>
+  <url><loc>https://urologo.damianmontes.medico.ec/blog/verificacion-de-fertilidad-masculina</loc><lastmod>2026-06-24</lastmod><priority>0.6</priority></url>
+  <url><loc>https://urologo.damianmontes.medico.ec/blog/cancer-de-vejiga-deteccion-temprana</loc><lastmod>2026-06-24</lastmod><priority>0.6</priority></url>
+  <url><loc>https://urologo.damianmontes.medico.ec/blog/hematuria-sangre-en-la-orina</loc><lastmod>2026-06-24</lastmod><priority>0.6</priority></url>
+  <url><loc>https://urologo.damianmontes.medico.ec/blog/salud-sexual-masculina-despues-de-los-50</loc><lastmod>2026-06-24</lastmod><priority>0.6</priority></url>
+  <url><loc>https://urologo.damianmontes.medico.ec/blog/nefropatia-diabetica-y-urologia</loc><lastmod>2026-06-24</lastmod><priority>0.6</priority></url>
+  <url><loc>https://urologo.damianmontes.medico.ec/blog/recuperacion-postoperatoria-en-urologia</loc><lastmod>2026-06-24</lastmod><priority>0.6</priority></url>
   <!-- Services -->
-  <url><loc>https://urologo.damianmontes.medico.ec/consulta-urologia</loc><lastmod>2026-03-28</lastmod><priority>0.7</priority></url>
-  <url><loc>https://urologo.damianmontes.medico.ec/enfermedades-via-urinaria</loc><lastmod>2026-03-28</lastmod><priority>0.7</priority></url>
-  <url><loc>https://urologo.damianmontes.medico.ec/calculos-vias-urinarias</loc><lastmod>2026-03-28</lastmod><priority>0.7</priority></url>
-  <url><loc>https://urologo.damianmontes.medico.ec/infeccion-vias-urinarias</loc><lastmod>2026-03-28</lastmod><priority>0.7</priority></url>
-  <url><loc>https://urologo.damianmontes.medico.ec/cancer-tumores</loc><lastmod>2026-03-28</lastmod><priority>0.7</priority></url>
-  <url><loc>https://urologo.damianmontes.medico.ec/esterilidad-infertilidad</loc><lastmod>2026-03-28</lastmod><priority>0.7</priority></url>
-  <url><loc>https://urologo.damianmontes.medico.ec/incontinencia-urinaria</loc><lastmod>2026-03-28</lastmod><priority>0.7</priority></url>
-  <url><loc>https://urologo.damianmontes.medico.ec/fimosis-circuncision</loc><lastmod>2026-03-28</lastmod><priority>0.7</priority></url>
-  <url><loc>https://urologo.damianmontes.medico.ec/verrugas-genitales</loc><lastmod>2026-03-28</lastmod><priority>0.7</priority></url>
-  <url><loc>https://urologo.damianmontes.medico.ec/quistes-epididimo</loc><lastmod>2026-03-28</lastmod><priority>0.7</priority></url>
-  <url><loc>https://urologo.damianmontes.medico.ec/eyaculacion-precoz</loc><lastmod>2026-03-28</lastmod><priority>0.7</priority></url>
-  <url><loc>https://urologo.damianmontes.medico.ec/disfuncion-erectil</loc><lastmod>2026-03-28</lastmod><priority>0.7</priority></url>
-  <url><loc>https://urologo.damianmontes.medico.ec/enfermedades-transmision-sexual</loc><lastmod>2026-03-28</lastmod><priority>0.7</priority></url>
-  <url><loc>https://urologo.damianmontes.medico.ec/hidrocelectomia-varicocelectomia</loc><lastmod>2026-03-28</lastmod><priority>0.7</priority></url>
-  <url><loc>https://urologo.damianmontes.medico.ec/cirugias-prostata</loc><lastmod>2026-03-28</lastmod><priority>0.7</priority></url>
-  <url><loc>https://urologo.damianmontes.medico.ec/litotricia-laser-holmio</loc><lastmod>2026-03-28</lastmod><priority>0.7</priority></url>
-  <url><loc>https://urologo.damianmontes.medico.ec/vasectomia</loc><lastmod>2026-03-28</lastmod><priority>0.7</priority></url>
+  <url><loc>https://urologo.damianmontes.medico.ec/consulta-urologia</loc><lastmod>2026-06-24</lastmod><priority>0.7</priority></url>
+  <url><loc>https://urologo.damianmontes.medico.ec/enfermedades-via-urinaria</loc><lastmod>2026-06-24</lastmod><priority>0.7</priority></url>
+  <url><loc>https://urologo.damianmontes.medico.ec/calculos-vias-urinarias</loc><lastmod>2026-06-24</lastmod><priority>0.7</priority></url>
+  <url><loc>https://urologo.damianmontes.medico.ec/infeccion-vias-urinarias</loc><lastmod>2026-06-24</lastmod><priority>0.7</priority></url>
+  <url><loc>https://urologo.damianmontes.medico.ec/cancer-tumores</loc><lastmod>2026-06-24</lastmod><priority>0.7</priority></url>
+  <url><loc>https://urologo.damianmontes.medico.ec/esterilidad-infertilidad</loc><lastmod>2026-06-24</lastmod><priority>0.7</priority></url>
+  <url><loc>https://urologo.damianmontes.medico.ec/incontinencia-urinaria</loc><lastmod>2026-06-24</lastmod><priority>0.7</priority></url>
+  <url><loc>https://urologo.damianmontes.medico.ec/fimosis-circuncision</loc><lastmod>2026-06-24</lastmod><priority>0.7</priority></url>
+  <url><loc>https://urologo.damianmontes.medico.ec/verrugas-genitales</loc><lastmod>2026-06-24</lastmod><priority>0.7</priority></url>
+  <url><loc>https://urologo.damianmontes.medico.ec/quistes-epididimo</loc><lastmod>2026-06-24</lastmod><priority>0.7</priority></url>
+  <url><loc>https://urologo.damianmontes.medico.ec/eyaculacion-precoz</loc><lastmod>2026-06-24</lastmod><priority>0.7</priority></url>
+  <url><loc>https://urologo.damianmontes.medico.ec/disfuncion-erectil</loc><lastmod>2026-06-24</lastmod><priority>0.7</priority></url>
+  <url><loc>https://urologo.damianmontes.medico.ec/enfermedades-transmision-sexual</loc><lastmod>2026-06-24</lastmod><priority>0.7</priority></url>
+  <url><loc>https://urologo.damianmontes.medico.ec/hidrocelectomia-varicocelectomia</loc><lastmod>2026-06-24</lastmod><priority>0.7</priority></url>
+  <url><loc>https://urologo.damianmontes.medico.ec/cirugias-prostata</loc><lastmod>2026-06-24</lastmod><priority>0.7</priority></url>
+  <url><loc>https://urologo.damianmontes.medico.ec/litotricia-laser-holmio</loc><lastmod>2026-06-24</lastmod><priority>0.7</priority></url>
+  <url><loc>https://urologo.damianmontes.medico.ec/cirugias-prostata-laser</loc><lastmod>2026-06-24</lastmod><priority>0.7</priority></url>
+  <url><loc>https://urologo.damianmontes.medico.ec/vasectomia</loc><lastmod>2026-06-24</lastmod><priority>0.7</priority></url>
 </urlset>

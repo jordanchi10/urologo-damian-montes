@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Menu, X, Calendar, Droplets, HeartPulse, ShieldAlert, CheckCircle, Instagram, Music, Facebook, Star, User, Award, Microscope, HeartHandshake, MapPin, Phone, Clock, MessageCircle, ImageIcon, Home as HomeIcon, BriefcaseMedical, BookOpen, ArrowRight } from 'lucide-react';
+import { Menu, X, Calendar, Droplets, HeartPulse, ShieldAlert, CheckCircle, Instagram, Music, Facebook, Star, User, Award, Microscope, HeartHandshake, MapPin, Phone, Clock, MessageCircle, ImageIcon, Home as HomeIcon, BriefcaseMedical, BookOpen, ArrowRight, ClipboardCheck, GraduationCap, ShieldCheck } from 'lucide-react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
@@ -88,7 +88,7 @@ export default function Home() {
     <div className="app-wrapper font-body" id="appWrapper" ref={appWrapperRef} onMouseMove={handleMouseMove}>
       <Helmet>
         <title>Dr. Damián Montes | Urólogo Especialista en Manta, Ecuador</title>
-        <meta name="description" content="Dr. Damián Montes es un cirujano urólogo de confianza en Manta, Ecuador." />
+        <meta name="description" content="Dr. Damián Montes es un reconocido cirujano urólogo en Manta, Ecuador. Especialista en cirugía láser de próstata HoLEP, cálculos urinarios y salud urológica integral." />
         <meta name="keywords" content="urologo manta, cirujano urologo, damian montes, urologia ecuador, calculos renales, prostata, urologia, urologo en manta" />
         <link rel="canonical" href="https://urologo.damianmontes.medico.ec/" />
         
@@ -151,7 +151,8 @@ export default function Home() {
               <a href="#servicios" className="nav-link font-medium text-base px-5 py-2.5 rounded-lg text-[#2C1810]" onClick={(e) => scrollToSection(e, 'servicios')}>Servicios</a>
               <a href="#especialidades" className="nav-link font-medium text-base px-5 py-2.5 rounded-lg text-[#2C1810]" onClick={(e) => scrollToSection(e, 'especialidades')}>Especialidades</a>
               <Link to="/blog" className="nav-link font-medium text-base px-5 py-2.5 rounded-lg text-[#2C1810]">Blog</Link>
-              <a href="#contacto" className="font-semibold text-base px-8 py-2.5 rounded-full transition-all duration-300 hover:shadow-lg ml-2 bg-[#5D4037] text-[#F5F1E8]" onClick={(e) => scrollToSection(e, 'contacto')}>Contacto</a>
+              <Link to="/calculadora-ipss" className="font-semibold text-base px-8 py-2.5 rounded-full transition-all duration-300 hover:shadow-lg hover:bg-[#424242] ml-2 bg-[#8D6E63] text-[#F5F1E8]">Test IPSS</Link>
+              <a href="#contacto" className="font-semibold text-base px-8 py-2.5 rounded-full transition-all duration-300 hover:shadow-lg hover:bg-[#424242] ml-2 bg-[#5D4037] text-[#F5F1E8]" onClick={(e) => scrollToSection(e, 'contacto')}>Contacto</a>
             </div>
 
             {/* Mobile menu button */}
@@ -183,6 +184,9 @@ export default function Home() {
               </a>
               <Link to="/blog" className="flex items-center gap-3 font-medium text-base py-3 px-3 rounded-lg hover:bg-gray-50 text-[#2C1810]">
                 <BookOpen className="w-5 h-5" /> Blog
+              </Link>
+              <Link to="/calculadora-ipss" className="flex items-center gap-3 font-medium text-base py-3 px-3 rounded-lg hover:bg-gray-50 text-[#0B7B5A]" onClick={() => setMobileMenuOpen(false)}>
+                <ClipboardCheck className="w-5 h-5" /> Test Próstata (IPSS)
               </Link>
               <a href="https://wa.me/593986495487" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 font-semibold text-base text-center py-3 rounded-lg mt-3 bg-[#5D4037] text-[#F5F1E8]">
                 <Calendar className="w-5 h-5" /> Agendar Cita
@@ -500,6 +504,157 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Certificaciones y Logros Section */}
+      <section className="py-20 lg:py-28 bg-[#F5F1E8]/30 border-t border-[#E8DCC8] relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(93,64,55,0.03),transparent)] pointer-events-none" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <span className="inline-block bg-[#5D4037]/10 text-[#5D4037] text-xs font-bold uppercase tracking-wider px-3.5 py-1.5 rounded-full mb-4">
+              Acreditación y Trayectoria Profesional
+            </span>
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#2C1810]">
+              Certificaciones, Membresías y Logros
+            </h2>
+            <p className="text-lg max-w-3xl mx-auto text-[#6D4C41]">
+              Respaldando la excelencia médica y el cuidado de su salud con constante actualización internacional y acreditaciones de primer nivel.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                icon: GraduationCap,
+                tag: "Especialización Médica",
+                title: "Postgrado de Urología en Argentina",
+                desc: "Formación de postgrado de alta complejidad quirúrgica y clínica urológica en Buenos Aires, Argentina.",
+                bgColor: "bg-amber-50 text-amber-700 border-amber-200/50"
+              },
+              {
+                icon: ShieldCheck,
+                tag: "Sociedad Científica",
+                title: "Sociedad Ecuatoriana de Urología",
+                desc: "Miembro Activo Oficial participando en constantes consensos, investigaciones y ponencias a nivel nacional.",
+                bgColor: "bg-emerald-50 text-emerald-700 border-emerald-200/50"
+              },
+              {
+                icon: Award,
+                tag: "Asociación Continental",
+                title: "Confederación Americana de Urología",
+                desc: "Miembro Activo (CAU), conectado permanentemente con los avances científicos y guías internacionales más recientes.",
+                bgColor: "bg-blue-50 text-blue-700 border-blue-200/50"
+              },
+              {
+                icon: Microscope,
+                tag: "Acreditación Tecnológica",
+                title: "Láser de Próstata de Alta Complejidad",
+                desc: "Certificación formal y entrenamiento especializado en cirugía de enucleación prostática con Láser de Holmio (HoLEP).",
+                bgColor: "bg-rose-50 text-rose-700 border-rose-200/50"
+              },
+              {
+                icon: BriefcaseMedical,
+                tag: "Cirugía de Mínima Invasión",
+                title: "Cirugía Laparoscópica Avanzada",
+                desc: "Capacitación avanzada para realizar procedimientos reconstructivos y oncológicos por vía laparoscópica.",
+                bgColor: "bg-indigo-50 text-indigo-700 border-indigo-200/50"
+              },
+              {
+                icon: Droplets,
+                tag: "Tratamiento de Litiasis",
+                title: "Endourología Láser de Cálculos",
+                desc: "Experto en la resolución mínimamente invasiva de cálculos renales y ureterales mediante litotricia láser de última generación.",
+                bgColor: "bg-teal-50 text-teal-700 border-teal-200/50"
+              }
+            ].map((cert, idx) => {
+              const IconComponent = cert.icon;
+              return (
+                <div 
+                  key={idx}
+                  className="bg-white rounded-3xl p-6 sm:p-8 border border-[#E8DCC8]/60 shadow-md hover:shadow-xl hover:border-[#8D6E63]/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
+                >
+                  <div className="space-y-4">
+                    <div className="flex justify-between items-start">
+                      <div className={`p-3.5 rounded-2xl border ${cert.bgColor}`}>
+                        <IconComponent className="w-6 h-6" />
+                      </div>
+                      <span className="text-xs font-bold uppercase tracking-wider text-gray-400 bg-gray-100 px-2.5 py-1 rounded-md">
+                        {cert.tag}
+                      </span>
+                    </div>
+                    <h3 className="font-display font-bold text-lg text-[#2C1810] leading-tight pt-1">
+                      {cert.title}
+                    </h3>
+                    <p className="text-[#6D4C41] text-sm leading-relaxed">
+                      {cert.desc}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* IPSS Calculator Promotional Banner */}
+      <section className="py-16 bg-[#F5F1E8]/60 border-y border-[#E8DCC8]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white rounded-3xl p-8 sm:p-12 shadow-xl border border-[#E8DCC8] relative overflow-hidden">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(11,123,90,0.05),transparent)] pointer-events-none" />
+            
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+              <div className="lg:col-span-7 space-y-6">
+                <span className="inline-block bg-[#0B7B5A]/10 text-[#0B7B5A] text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">
+                  Herramienta Médica de Autodiagnóstico
+                </span>
+                <h3 className="font-display text-3xl sm:text-4xl font-bold text-[#2C1810] leading-tight">
+                  ¿Tiene dudas sobre su salud prostática? Realice el Test IPSS
+                </h3>
+                <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
+                  La Hiperplasia Prostática Benigna (agrandamiento de próstata) afecta a la mayoría de hombres a partir de los 45 años. Evalúe de forma rápida, privada y gratuita la intensidad de sus síntomas urinarios con el estándar médico clínico internacional.
+                </p>
+                
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                  {[
+                    "Sensación de vaciado incompleto",
+                    "Orinar frecuentemente en lapsos cortos",
+                    "Chorro débil, fino o entrecortado",
+                    "Interrupciones nocturnas (Nocturia)"
+                  ].map((item, idx) => (
+                    <div key={idx} className="flex items-center gap-2.5 text-[#5D4037] font-semibold text-sm">
+                      <div className="w-5 h-5 rounded-full bg-[#0B7B5A]/10 flex items-center justify-center text-[#0B7B5A] flex-shrink-0">
+                        <CheckCircle className="w-3 h-3" />
+                      </div>
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="lg:col-span-5 flex flex-col items-center justify-center bg-[#F5F1E8]/50 border border-[#E8DCC8] rounded-2xl p-6 sm:p-8 text-center space-y-5">
+                <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-[#0B7B5A]/10 text-[#0B7B5A]">
+                  <ClipboardCheck className="w-8 h-8" />
+                </div>
+                <div>
+                  <h4 className="font-display font-bold text-lg text-[#2C1810]">Test de Síntomas IPSS</h4>
+                  <p className="text-sm text-gray-500 mt-1">Reciba una clasificación de severidad (Leve, Moderado o Grave) de forma instantánea.</p>
+                </div>
+                
+                <div className="flex flex-col items-center gap-1.5 bg-white px-4 py-2 rounded-xl border border-[#E8DCC8] w-full text-xs font-semibold text-[#5D4037]">
+                  <span>🕒 Duración: 3 minutos</span>
+                  <span>🔒 100% Privado y Confidencial</span>
+                </div>
+
+                <Link 
+                  to="/calculadora-ipss" 
+                  className="w-full inline-flex items-center justify-center gap-2 font-semibold px-6 py-3.5 rounded-full bg-[#0B7B5A] text-white hover:bg-[#5D4037] hover:scale-[1.02] transition-all duration-300 shadow"
+                >
+                  Evaluar mis Síntomas <ArrowRight className="w-4 h-4" />
+                </Link>
               </div>
             </div>
           </div>
